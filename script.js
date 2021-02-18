@@ -43,4 +43,4 @@ button.addEventListener('click', () => {
     toggleButton();
 });
 
-audioElement.addEventListener('ended', toggleButton)
+audioElement.addEventListener('ended', toggleButton);
