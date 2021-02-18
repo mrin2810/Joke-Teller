@@ -49,6 +49,18 @@ button:disabled {
   filter: brightness(30%);
 }
 
+#feedback {
+  background: #45badd;
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: black;
+}
+
+.fa-volume-up {
+  font-size: 2.5rem;
+}
+
 /* Media query: tab or small */
 @media screen and (max-width: 1000px) {
   .container {

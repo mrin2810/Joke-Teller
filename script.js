@@ -1,11 +1,13 @@
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
+const feedbackElement = document.getElementById('feedback');
 const apiUrl = 'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
 let joke = '';
 
 // toggleButton
 function toggleButton() {
     button.disabled = !button.disabled;
+    feedbackElement.innerHTML = "";
 }
 
 function tellMe(jokeToSpeech) {
@@ -38,6 +40,10 @@ async function getJokes() {
 button.addEventListener('click', () => {
     getJokes();
     toggleButton();
+    feedbackElement.innerHTML = "Loading joke...";
 });
 
+audioElement.addEventListener('play', () => {
+    feedbackElement.innerHTML = "<i class='fas fa-volume-up'></i>";
+});
 audioElement.addEventListener('ended', toggleButton);
